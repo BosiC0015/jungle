@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'
   get 'userpage', to: 'sessions#userpage'
-  # get 'authorized', to: 'sessions#page_requires_login'
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]

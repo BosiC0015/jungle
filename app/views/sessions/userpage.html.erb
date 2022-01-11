@@ -5,9 +5,9 @@
   </header>
 
   <% if logged_in? %>
-    <p>Welcome to Jungle, <%= current_user.firstname %></p>
+    <p>Hello <%= current_user.firstname %>, welcome to Jungle!</p>
+  <% else %>
+    <p>You are not logged in, please <%= link_to 'Login', [:login], class: 'btn btn-info' %> or <%= link_to 'Register', [:new, :user], class: 'btn btn-info' %></p>
   <% end %>
-
-  <p>You are not logged in, please <%= link_to 'Login', [:login], class: 'btn btn-info' %> or <%= link_to 'Register', [:new, :user], class: 'btn btn-info' %></p>
 
 </section>
