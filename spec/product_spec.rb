@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   describe 'Validations' do
-    # validation tests/examples here
 
     it "is valid with valid attributes" do
       @category1 = Category.find_or_create_by! name: 'category1'
