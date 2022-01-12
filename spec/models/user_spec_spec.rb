@@ -51,11 +51,7 @@ RSpec.describe User, type: :model do
         password: '123',
         password_confirmation: '123'
       })
-      @user = User.authenticate_with_credentials(
-        params[:email], 
-        params[:password]
-      )
-      expect(@user.id).to be_eqal @new_user.id
+      expect(@new_user).to_not be_valid
     end
 
   end
