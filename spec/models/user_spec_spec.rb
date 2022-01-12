@@ -53,11 +53,25 @@ RSpec.describe User, type: :model do
       })
       expect(@new_user).to_not be_valid
     end
-
+    
   end
+  
 
   describe '.authenticate_with_credentials' do
-    # examples for this class method here
+
+    it 'should have functioning authenticate_with_credentials method' do
+      @user = User.create({
+        firstname: 'Jungle',
+        lastname: 'User',
+        email: 'example@domain.com',
+        password: '012345',
+        password_confirmation: '012345'
+      })
+      @user.save
+      @new = User.authenticate_with_credentials('example@domain.com', '012345')
+      expect(@new.email).to eql(@user.email)
+    end
+
   end
   
 end
