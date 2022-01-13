@@ -2,6 +2,26 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+## Final Product
+
+1. The home page shows a list of products in stock.
+!["homepage"](https://github.com/BosiC0015/jungle/blob/master/public/imgs/homepage.png)
+
+2. When click on "Details" button, product details page is loaded
+!["product-details"](https://github.com/BosiC0015/jungle/blob/master/public/imgs/product-details.gif)
+
+3. A guest can register and login the app.
+!["register"](https://github.com/BosiC0015/jungle/blob/master/public/imgs/register.gif)
+
+4. A registered user can login the app.
+!["login"](https://github.com/BosiC0015/jungle/blob/master/public/imgs/login.gif)
+
+5. How an order is made on Jungle
+!["login"](https://github.com/BosiC0015/jungle/blob/master/public/imgs/login.gif)
+
+6. Using the admin name and password provided in the Setup part can access admin pages, and manage the product categories and products.
+!["admin"](https://github.com/BosiC0015/jungle/blob/master/public/imgs/admin.gif)
+
 ## Additional Steps for Apple M1 Machines
 
 1. Make sure that you are runnning Ruby 2.6.6 (`ruby -v`)
@@ -15,7 +35,9 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 2. Create `config/database.yml` by copying `config/database.example.yml`
 3. Create `config/secrets.yml` by copying `config/secrets.example.yml`
 4. Run `bin/rake db:reset` to create, load and seed db
-5. Create .env file based on .env.example
+5. Create .env file based on .env.example. add following text to .env for admin authentication
+`admin_username: "Jungle"
+admin_password: "book"`
 6. Sign up for a Stripe account
 7. Put Stripe (test) keys into appropriate .env vars
 8. Run `bin/rails s -b 0.0.0.0` to start the server
