@@ -13,9 +13,9 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   
   def self.authenticate_with_credentials(email, password)
-    user = User.find_by_email(email)
-    if user.authenticate(password)
-      return user
+    user = User.find_by_email(email.downcase.strip)
+    if User.find_by_email(email.downcase.strip).authenticate(password)
+      return User.find_by_email(email.downcase.strip)
     end
     return nil
   end
