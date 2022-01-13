@@ -59,7 +59,7 @@ RSpec.describe User, type: :model do
 
   describe '.authenticate_with_credentials' do
 
-    it 'should have functioning authenticate_with_credentials method' do
+    before do 
       @user = User.create({
         firstname: 'Jungle',
         lastname: 'User',
@@ -68,8 +68,27 @@ RSpec.describe User, type: :model do
         password_confirmation: '012345'
       })
       @user.save
-      @new = User.authenticate_with_credentials('example@domain.com', '012345')
-      expect(@new.email).to eql(@user.email)
+    end
+
+    it 'should have functioning authenticate_with_credentials method' do
+      email = 'example@domain.com'
+      password = '012345'
+      @auth = User.authenticate_with_credentials(email, password)
+      expect(@auth.email).to eq(@user.email)
+    end
+
+    it 'should be successfully authenticated and ignore spaces before and/or after email address' do
+      email = '  example@domain.com '
+      password = '012345'
+      @auth = User.authenticate_with_credentials(email, password)
+      expect(@auth.email).to eq(@user.email)
+    end
+    
+    it 'should be successfully authenticated when the case of email is wrong' do
+      email = 'EXAMPLe@DOMAIN.CoM'
+      password = '012345'
+      @auth = User.authenticate_with_credentials(email, password)
+      expect(@auth.email).to eq(@user.email)
     end
 
   end
