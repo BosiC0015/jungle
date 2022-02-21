@@ -17,7 +17,7 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 !["login"](https://github.com/BosiC0015/jungle/blob/master/public/imgs/login.gif)
 
 5. How an order is made on Jungle
-!["login"](https://github.com/BosiC0015/jungle/blob/master/public/imgs/login.gif)
+!["login"](https://github.com/BosiC0015/jungle/blob/master/public/imgs/order.gif)
 
 6. Using the admin name and password provided in the Setup part can access admin pages, and manage the product categories and products.
 !["admin"](https://github.com/BosiC0015/jungle/blob/master/public/imgs/admin.gif)
